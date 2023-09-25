@@ -1,0 +1,37 @@
+#navbar {
+    color: white;
+    font-size: 33px;
+    text-align: center;
+}
+
+@media (max-width: 767px){
+    #navbar {
+        font-size: 25px;
+    }
+
+}
+.container {
+    flex-direction: column;
+    display: flex;
+}
+.container#mid {
+    margin-top: 1%;
+    width: 80%;
+}
+.container#main {
+    background-color: white;
+    color: black;
+    margin-top: 1%;
+    width: 77%;
+    height: fit-content;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(../images/summonersRift.jpg);
+    background-position: 60%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
