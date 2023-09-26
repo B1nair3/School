@@ -5,10 +5,28 @@
  */
 package control;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import model.DAO.ClienteDAO;
+import model.Cliente;
+
 /**
  *
  * @author aluno
  */
 public class ClienteControl {
+    ClienteDAO clDAO = new ClienteDAO();
+
+    public void cadastrar(String nome, int codigo) throws SQLException, ClassNotFoundException {
+        Cliente cliente = new Cliente(codigo, nome);
+        clDAO.cadastrarCliente(cliente);
+    }
     
+    public void excluir(int codigo) throws SQLException, ClassNotFoundException {
+        clDAO.excluirCliente(codigo);
+    }
+    
+    public ArrayList<Cliente> buscar() throws SQLException, ClassNotFoundException {
+        return (clDAO.buscarCliente());
+    }
 }
