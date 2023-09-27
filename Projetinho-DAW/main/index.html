@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Info</title>
+    <link rel="icon" href="../imagesAll/iconSite.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <style>
+
+
+        @media print {
+            #principal {
+                display: none; /*alteração para display none*/
+            }
+            #top {
+                display: none; /*alteração para display none*/
+            }
+        }
+
+        @media (max-width: 1080px) {
+            #principal {
+                display: none; /*alteração para display none*/
+            }
+            #usages {
+                display: none; /*alteração para display none*/
+            }
+            #cadastrar {
+                font-size: 20px; /*alteração de font-size: 40px -> 20px*/
+            }
+        }
+
+        @media (max-width: 1250px) {
+            #anchorUsages {
+                display: none; /*alteração para display none*/
+            }
+            #background {
+                background-repeat: repeat; /*alteração de no-repeat -> repeat*/
+                background-size: 130%; /*alteração de 100 -> 130*/
+            }
+        }
+
+        @media (max-width: 600px) {
+            #loiIcon {
+                height: 55px; /*alteração de height 70px -> 55px*/
+                width: 220px; /*alteração de width 250px -> 220px*/
+            }
+            details {
+                margin-top: 25px; /*alteração de margin-top 50px -> 25px*/
+            }
+            #animationASol {
+                display: none; /*alteração para display none*/
+            }
+        }
+        
+
+        a {
+            cursor: url(../imagesAll/cursores/link.cur), auto;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #principal {
+            margin-top: 10px;
+            padding: 10px;
+            color: white;
+            background-image: url(images/aurelionBack.png);
+            background-repeat: no-repeat;
+            width: 1180px;
+            height: 160px;
+            font-size: 30px;
+            z-index: 1;
+            border-radius: 15px 15px 15px 15px;
+        }
+        #botton {
+            margin-top: 10px;
+            padding: 10px;
+            width: 1180px;
+            height: max-content;
+            background-color: rgb(234, 234, 234);
+            border-radius: 15px 15px 0px 0px;
+            z-index: 1;
+        }
+        #top {
+            text-align: center;
+            padding: 10px;
+            width: 1180px;
+            background-color: rgb(00, 00, 00);
+            border-radius: 0px 0px 15px 15px;
+            color: white;
+            z-index: 1;
+            font-size: 30px;
+        }
+        #populares {
+            font-size: 20px;
+            border: 1px solid black;
+            max-width: 350px;
+            background-color: white;
+        }
+        #banidos {
+            font-size: 20px;
+            border: 1px solid black;
+            max-width: 350px;
+            background-color: white;
+        }
+        #melhores {
+            font-size: 20px;
+            border: 1px solid black;
+            max-width: 350px;
+            background-color: white;
+        }
+        #usages {
+            font-size: 20px;
+            border: 1px solid black;
+            max-width: 1050px;
+            background-color: white;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            background-image: url(../imagesAll/summonersRift.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            cursor: url(../imagesAll/cursores/normal.cur), auto;
+        }
+        details {
+            margin-top: 50px;
+        }
+
+        #animationASol {
+            animation: animationASol 7s linear infinite;
+            position: fixed; 
+            margin-top: 100px; 
+            margin-left: 20px;
+            z-index: 0;
+        }
+
+        @keyframes animationASol {
+            0% {
+                transform: translateX(-300px);
+            }
+
+            100% {
+                transform: translateY(500px) translateX(2000px);
+            }
+        }
+    </style>
+</head>
+<body id="background">
+    <img src="../imagesAll/ASolFly.gif" alt="ASol" id="animationASol">
+    <div class="container">
+        <!--parte do topo, logo do site-->
+        <div id="top">
+            <div id="cadastrar" style="text-align: right;"><a href="../formularios/cadastro.html" style="text-decoration: none; color: white;">Cadastrar-se</a></div>
+            <a href="../main/index.html"><img  src="../imagesAll/LOI Icon.png" alt="League of Info" height="70" width="250" id="loiIcon"></a>
+        </div>
+    </div>
+    <div class="container">
+        <!--parte do meio, onde uma imagem bonita sobre um campeão e etc etc-->
+        <div id="principal">
+        </div>
+    </div>
+
+    <div class="container">
+        <!--parte de baixo do site, onde tem as infos-->
+        <div id="botton" align="center">
+            <span id="anchor" style="font-size: 20px;">
+            Busca<br>
+            <a style="color: black;" href="#populares">Campeões mais populares</a>  |  <a style="color: black;" href="#banidos">Campeões mais banidos</a>  |  
+            <a style="color: black;" href="#melhores">Melhores Campeões</a><br><a style="color: black;" href="#usages" id="anchorUsages">Campeões ultilizados</a>
+            </span>
+                <!--tabela de campeões-->
+                <details>
+                    <summary style="font-size: 30px;">Campeões com informações disponiveis</summary>
+                    <table>
+                        <!--Rotas-->
+                        <tr align="center">
+                            <td>
+                                <img src="../imagesAll/lanes/topIcon.png" alt="Top" width="100px"><br>
+                                Topo
+                            </td>
+                            <td>
+                                <img src="../imagesAll/lanes/jungleIcon.png" alt="Jungle" width="100px"><br>
+                                Selva
+                            </td>
+                            <td>
+                                <img src="../imagesAll/lanes/midIcon.png" alt="Mid" width="100px"><br>
+                                Meio
+                            </td>
+                            <td>
+                                <img src="../imagesAll/lanes/adcIcon.png" alt="Adc" width="100px"><br>
+                                Atirador
+                            </td>
+                            <td>
+                                <img src="../imagesAll/lanes/supIcon.png" alt="Sup" width="100px"><br>
+                                Suporte
+                            </td>
+                        </tr>
+                        <!--Campeões-->
+                        <tr align="center">
+                            <td>
+                                <a href="../aatrox/aatrox.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/AatroxIcon.jpg" alt="Aatrox" width="100px">
+                                <br>Aatrox</a>
+                            </td>
+                            <td>
+                                <a href="../rengar/rengar.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/rengarIcon.jpg" alt="Rengar" width="100px">
+                                <br>Rengar</a>
+                            </td>
+                            <td>
+                                <a href="../yasuo/yasuo.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/yasuoIcon.png" alt="Yasuo" width="100px">
+                                <br>Yasuo</a>
+                            </td>
+                            <td>
+                                <a href="../draven/draven.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/dravenIcon.png" alt="Draven" width="100px">
+                                <br>Draven</a>
+                            </td>
+                            <td>
+                                <a href="../thresh/thresh.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/threshIcon.png" alt="Thresh" width="100px"><br>
+                                Thresh</a>
+                            </td>
+                        </tr>
+                    </table>
+                </details>
+                <br><br>
+
+                <!--Campeões mais populares indice-->
+                <div id="populares">
+                    <span style="font-size: 25px;">Campeões mais populares<br></span>
+                    (Pick Rate)
+                    <table style="margin: 10px;">
+                        <tr align="center">
+                            <td>
+                                Jinx<br><img src="../imagesAll/champIcons/jinxIcon.jpg" alt="Jinx" width="70px">
+                            </td>
+                            <td>
+                                <progress value="30" max="100"></progress>30.0%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                Ezreal<br><img src="../imagesAll/champIcons/ezrealIcon.jpg" alt="Ezreal" width="70px">
+                            </td>
+                            <td>
+                                <progress value="23" max="100"></progress>23.0%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                Thresh<br><img src="../imagesAll/champIcons/threshIcon.png" alt="Thresh" width="70px">
+                            </td>
+                            <td>
+                                <progress value="20" max="100"></progress>19.6%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                Aphelios<br><img src="../imagesAll/champIcons/apheliosIcon.png" alt="Aphelios" width="70px">
+                            </td>
+                            <td>
+                                <progress value="17" max="100"></progress>17.0%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                            Kai'Sa<br><img src="../imagesAll/champIcons/kaisaIcon.png" alt="Kai'Sa" width="70px">
+                            </td>
+                            <td>
+                                <progress value="17" max="100"></progress>16.7%
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br><br>
+
+                <!--Mais banidos indice-->
+                <div id="banidos">
+                    <span style="font-size: 25px;">Campeões mais banidos<br></span>
+                    (Ban Rate)
+                    <table>
+                        <tr align="center">
+                            <td>
+                                Zed<br><img src="../imagesAll/champIcons/zedIcon.jpg" alt="Zed" width="70px">
+                            </td>
+                            <td>
+                                <progress max="100" value="33"></progress>33.0%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                Blitzcrank<br><img src="../imagesAll/champIcons/blitzcrankIcon.jpg" alt="Blitzcrank" width="70px">
+                            </td>
+                            <td>
+                                <progress value="30" max="100"></progress>29.6%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                Kha'Zix<br><img src="../imagesAll/champIcons/khazixIcon.jpg" alt="Kha'Zix" width="70px">
+                            </td>
+                            <td>
+                                <progress value="29" max="100"></progress>29.4%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                Morgana<br><img src="../imagesAll/champIcons/morganaIcon.jpg" alt="Morgana" width="70px">
+                            </td>
+                            <td>
+                                <progress value="25" max="100"></progress>24.7%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                Malphite<br><img src="../imagesAll/champIcons/malphiteIcon.jpg" alt="Malphite" width="70px">
+                            </td>
+                            <td>
+                                <progress value="22" max="100"></progress>21.9%
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br><br>
+
+                <!--Melhores campeões indicie-->
+                <div id="melhores">
+                    <span style="font-size: 25px;">Melhores campeões<br></span>
+                    (Win Rate)
+                    <table>
+                        <tr align="center">
+                            <td>
+                                Milio<br><img src="../imagesAll/champIcons/milioIcon.jpg" alt="Milio" width="70px">
+                            </td>
+                            <td>
+                                <progress value="54" max="100"></progress>52.9%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                             Ornn<br><img src="../imagesAll/champIcons/ornnIcon.jpg" alt="Ornn" width="70px">   
+                            </td>
+                            <td>
+                                <progress value="53" max="100"></progress>52.8%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                Nilah<br><img src="../imagesAll/champIcons/nilahIcon.jpg" alt="Nilah" width="70px">
+                            </td>
+                            <td>
+                                <progress value="53" max="100"></progress>52.8%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                Taric<br> <img src="../imagesAll/champIcons/taricIcon.jpg" alt="Taric" width="70px">
+                            </td>
+                            <td>
+                                <progress value="52" max="100"></progress>52.7%
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                Kog'Maw<br> <img src="../imagesAll/champIcons/kogmawIcon.jpg" alt="Kog'Maw" width="70px">
+                            </td>
+                            <td>
+                                <progress value="52" max="100"></progress>52.7%
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br><br>
+
+                <!--Campeões que foram usados no site-->
+                <div id="usages" style="margin-top: 150px;">
+                    <span style="font-size: 25px;">Campeões ultilizados<br></span>
+                    <table style="margin: 10px;">
+                        <tr align="center">
+                            <td width="100px">
+                                <a href="../aatrox/aatrox.html" style="text-decoration: none; color: black;" id="aatrox"><img src="../imagesAll/champIcons/AatroxIcon.jpg" alt="" 
+                                width="70px"><br>Aatrox<br>Topo</a>
+                            </td>
+                            <td width="100px">
+                                <img src="../imagesAll/champIcons/apheliosIcon.png" alt="" width="70px"><br>Aphelios<br>ADC
+                            </td>
+                            <td width="100px">
+                                <img src="../imagesAll/champIcons/aurelionIcon.jpg" alt="" width="70px"><br>Aurelion<br>Mid
+                            </td>
+                            <td width="100px">
+                                <img src="../imagesAll/champIcons/blitzcrankIcon.jpg" alt="" width="70px"><br>Blitzcrank<br>Sup
+                            </td>
+                            <td width="100px">
+                                <a href="../draven/draven.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/dravenIcon.png" alt="" width="70px"><br>Draven<br>ADC</a>
+                            </td>
+                            <td width="100px">
+                                <img src="../imagesAll/champIcons/ezrealIcon.jpg" alt="" width="70px"><br>Ezreal<br>ADC
+                            </td>
+                            <td width="100px">
+                                <img src="../imagesAll/champIcons/jinxIcon.jpg" alt="" width="70px"><br>Jinx<br>ADC
+                            </td>
+                            <td width="100px">
+                                <img src="../imagesAll/champIcons/kaisaIcon.png" alt="" width="70px"><br>Kai'Sa<br>ADC
+                            </td>
+                            <td width="100px">
+                                <img src="../imagesAll/champIcons/khazixIcon.jpg" alt="" width="70px"><br>Kha'Zix<br>Jungle
+                            </td>
+                            <td width="100px">
+                                <img src="../imagesAll/champIcons/kogmawIcon.jpg" alt="" width="70px"><br>Kog'Maw<br>ADC
+                            </td>
+                        </tr>
+                        <tr align="center">
+                            <td>
+                                <img src="../imagesAll/champIcons/malphiteIcon.jpg" alt="" width="70px"><br>Malphite<br>Top
+                            </td>
+                            <td>
+                                <img src="../imagesAll/champIcons/milioIcon.jpg" alt="" width="70px"><br>Milio<br>Sup
+                            </td>
+                            <td>
+                                <img src="../imagesAll/champIcons/morganaIcon.jpg" alt="" width="70px"><br>Morgana<br>Sup
+                            </td>
+                            <td>
+                                <img src="../imagesAll/champIcons/nilahIcon.jpg" alt="" width="70px"><br>Nilah<br>ADC
+                            </td>
+                            <td>
+                                <img src="../imagesAll/champIcons/ornnIcon.jpg" alt="" width="70px"><br>Ornn<br>Top
+                            </td>
+                            <td>
+                                <a href="../rengar/rengar.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/rengarIcon.jpg" alt="" width="70px"><br>Rengar<br>Jungle</a>
+                            </td>
+                            <td>
+                                <img src="../imagesAll/champIcons/taricIcon.jpg" alt="" width="70px"><br>Taric<br>Sup
+                            </td>
+                            <td>
+                                <a href="../thresh/thresh.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/threshIcon.png" alt="" width="70px"><br>Thresh<br>Sup</a>
+                            </td>
+                            <td>
+                                <a href="../yasuo/yasuo.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/yasuoIcon.png" alt="" width="70px"><br>Yasuo<br>Mid</a>
+                            </td>
+                            <td>
+                                <img src="../imagesAll/champIcons/zedIcon.jpg" alt="" width="70px"><br>Zed<br>Mid
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+        </div>
+    </div>
+    
+</body>
+</html>

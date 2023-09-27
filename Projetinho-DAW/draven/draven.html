@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draven</title>
+    <link rel="icon" href="../imagesAll/iconSite.png">
+
+    <style>
+        a {
+            cursor: url(../imagesAll/cursores/link.cur), auto;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        
+        #popularidade {
+            border: 1px solid black;
+            background-color: white;
+            max-width: 660px;
+        }
+        #space {
+            margin: 10px;
+        }
+
+        #principal {
+            margin-top: 10px;
+            padding: 10px;
+            color: white;
+            background-image: url(images/draven/dravenBack.png);
+            background-repeat: no-repeat;
+            width: 1180px;
+            font-size: 30px;
+            border-radius: 15px 15px 15px 15px;
+            z-index: 1;
+        }
+
+        #botton {
+            margin-top: 10px;
+            padding: 10px;
+            width: 1180px;
+            background-color: rgb(235, 235, 235);
+            height: max-content;
+            border-radius: 15px 15px 0px 0px;
+            z-index: 1;
+        }
+        #top {
+            text-align: center;
+            padding: 10px;
+            width: 1180px;
+            background-color: rgb(00, 00, 00);
+            border-radius: 0px 0px 15px 15px;
+            color: white;
+            font-size: 40px;
+            z-index: 1;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            background-image: url(../imagesAll/summonersRift.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            cursor: url(../imagesAll/cursores/normal.cur), auto;
+        }
+
+        #rota {
+            border: 1px solid black;
+            max-width: fit-content;
+            background-color: white;
+        }
+        #spells {
+            border: 1px solid black;
+            background-color: white;
+            max-width: fit-content;
+        }
+        #skills {
+            border: 1px solid black;
+            background-color: white;
+            max-width: fit-content;
+            width: 658px;
+            height: max-content;
+        }
+        #items {
+            border: 1px solid black;
+            max-width: fit-content;
+            background-color: white;
+        }
+        #runas {
+            border: 1px solid black;
+            max-width: fit-content;
+            background-color: white;
+        }
+        #historia {
+            border: 1px solid black;
+            background-color: white;
+            width: 1172px;
+            margin-left: 3px;
+            margin-top: 10px;
+        }
+
+        #animationASol {
+            animation: animationASol 7s linear infinite;
+            position: fixed; 
+            margin-top: 100px; 
+            margin-left: 20px;
+            z-index: 0;
+        }
+
+        @keyframes animationASol {
+        0% {
+            transform: translateX(-300px);
+        }
+
+        100% {
+            transform: translateY(500px) translateX(2000px);
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <img src="../imagesAll/ASolFly.gif" alt="ASol" id="animationASol">
+    <!--parte do topo, com o icone do site-->
+    <div class="container">
+        <div id="top">
+            <div style="text-align: right;"><a href="../formularios/cadastro.html" style="text-decoration: none; color: white;">Cadastrar-se</a></div>
+            <a href="../main/index.html"><img src="../imagesAll/LOI Icon.png" alt="League of Info" height="70" width="250"></a>
+        </div>
+    </div>
+
+    <!--parte onde aparece o icone do campeão etc-->
+    <div class="container">
+        <div id="principal">
+            <table>
+                <tr>
+                    <th>
+                        <img src="images/draven/dravenIcon.png" alt="Draven Icon" height="150px">
+                    </th>
+                    <th align="left">
+                        Draven<br>
+                        Rota Inferior
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--parte de baixo do site, onde tem as infos-->
+    <div class="container">
+        <div id="botton">
+            <!--tabela de campeões-->
+            <div align="center">
+                <details>
+                   <summary style="font-size: 30px;">Campeões com informações disponiveis</summary>
+                   <table>
+                       <!--Rotas-->
+                       <tr align="center">
+                           <td>
+                               <img src="../imagesAll/lanes/topIcon.png" alt="Top" width="100px"><br>
+                               Topo
+                           </td>
+                           <td>
+                               <img src="../imagesAll/lanes/jungleIcon.png" alt="Jungle" width="100px"><br>
+                               Selva
+                           </td>
+                           <td>
+                               <img src="../imagesAll/lanes/midIcon.png" alt="Mid" width="100px"><br>
+                               Meio
+                           </td>
+                           <td>
+                               <img src="../imagesAll/lanes/supIcon.png" alt="Sup" width="100px"><br>
+                               Suporte
+                           </td>
+                       </tr>
+                       <!--Campeões-->
+                       <tr align="center">
+                           <td>
+                               <a href="../aatrox/aatrox.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/AatroxIcon.jpg" alt="Aatrox" width="100px">
+                               <br>Aatrox</a>
+                           </td>
+                           <td>
+                               <a href="../rengar/rengar.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/rengarIcon.jpg" alt="Rengar" width="100px">
+                               <br>Rengar</a>
+                           </td>
+                           <td>
+                               <a href="../yasuo/yasuo.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/yasuoIcon.png" alt="Yasuo" width="100px">
+                               <br>Yasuo</a>
+                           </td>
+                           <td>
+                               <a href="../thresh/thresh.html" style="text-decoration: none; color: black;"><img src="../imagesAll/champIcons/threshIcon.png" alt="Thresh" width="100px"><br>
+                               Thresh</a>
+                           </td>
+                       </tr>
+                   </table>
+               </details>
+       </div>
+
+            <!--organizando os elementos-->
+            <table style="margin-top: 30px; margin-left: 10px;">
+                <tr>
+                    <!--popularidade dos campeões-->
+                    <td>
+                        <div id="popularidade">
+                            <div id="space">
+                                <table>
+                                    <tr>
+                                        <td width="220px">
+                                            <progress value="6" max="100"></progress>6.1%
+                                        </td>
+                                        <td>
+                                            <progress value="50" max="100"></progress>49.9%
+                                        </td>
+                                        <td>
+                                            <progress value="18" max="100"></progress>18.4%
+                                        </td>
+                                    </tr>
+                                    <tr align="center">
+                                        <td>
+                                            Popularidade
+                                        </td>
+                                        <td>
+                                            % de vitoria
+                                        </td>
+                                        <td>
+                                            Taxa de<br>banimento
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+
+                    <!--video do aatrox-->
+                    <td rowspan="2">
+                        <iframe width="500" height="281" src="https://www.youtube.com/embed/h5zyGj4Z0Sg" title="YouTube video player" frameborder="0" allow="accelerometer;
+                        autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <!--rota-->
+                                    <div id="rota" align="center" style="margin-left: 120px; height: 190px;">
+                                        <div id="space">
+                                            <p align="center">Rota</p>
+                                            <img src="../imagesAll/lanes/adcIcon.png" alt="adc" width="100px"><br>Rota Atirador
+                                        </div>
+                                    </div>
+                                </td>
+            
+                                <td>
+                                    <!--summoner spells-->
+                                    <div id="spells" align="center" style="margin-left: 10px; height: 190px;">
+                                        <div id="space">
+                                            <p>Summoner Spells</p>
+                                            <table>
+                                                <tr align="center">
+                                                    <td>
+                                                        <img src="../imagesAll/spells/flashIcon.jpg" alt="Topo" width="100px">
+                                                    </td>
+                                                    <td>
+                                                        <img src="../imagesAll/spells/cleanse.png" alt="cleanse" width="100px">
+                                                    </td>
+                                                </tr>
+                                                <tr align="center">
+                                                    <td>
+                                                        Flash
+                                                    </td>
+                                                    <td>
+                                                        Cleanse
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!--organizando os items (em baixo)-->
+            <table>
+                <tr>
+                    <td>
+                        <!--habilidades-->
+                        <div id="skills">
+                            <div id="space">
+                                <p align="center" style="font-size: 20px;">Habilidades</p>
+                                <dl>
+                                    <dt>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img src="images/habilidades/dravenPassive.png" alt="Passiva" width="50px">
+                                                </td>
+                                                <th align="left">
+                                                    Passiva
+                                                </th>
+                                            </tr>
+                                        </table>
+                                        <b>League of Draven</b>
+                                    </dt>
+                                    <dd>
+                                        Draven ganha Adoração de seus fãs quando apanha uma Revolução do Machado ou abate uma tropa, monstro ou torre. Abater Campeões inimigos
+                                        concede ouro adicional a Draven, com base em quanta Adoração ele tem.
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img src="images/habilidades/dravenQ.png" alt="Q" width="50px">
+                                                </td>
+                                                <th align="left">
+                                                    Q
+                                                </th>
+                                            </tr>
+                                        </table>
+                                        <b>Revolução do machado</b>
+                                    </dt>
+                                    <dd>
+                                        O próximo ataque de Draven causará Dano Físico adicional. O machado ricocheteará do alvo em direção ao ar. Se Draven o apanhar, ele 
+                                        automaticamente irá preparar outra Revolução do Machado. Draven pode ter duas Revoluções do Machado simultaneamente em ação.
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img src="images/habilidades/dravenW.png" alt="W" width="50px">
+                                                </td>
+                                                <th align="left">
+                                                    W
+                                                </th>
+                                            </tr>
+                                        </table>
+                                        <b>Adrenalina</b>
+                                    </dt>
+                                    <dd>
+                                        Draven ganha um aumento de Velocidade de Movimento e de Ataque. O aumento na Velocidade de Movimento decai rapidamente ao longo da duração. 
+                                        Apanhar uma Revolução do Machado fará com que o Tempo de Recarga de Adrenalina seja zerado.
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img src="images/habilidades/dravenE.png" alt="E" width="50px">
+                                                </td>
+                                                <th align="left">
+                                                    E
+                                                </th>
+                                            </tr>
+                                        </table>
+                                        <b>Sai da frente</b>
+                                    </dt>
+                                    <dd>
+                                        Draven arremessa seus machados, causando Dano Físico aos alvos atingidos e empurrando-os para o lado. Os alvos atingidos sofrem redução 
+                                        de velocidade.
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img src="images/habilidades/dravenR.png" alt="R" width="50px">
+                                                </td>
+                                                <th align="left">
+                                                    R
+                                                </th>
+                                            </tr>
+                                        </table>
+                                        <b>Reta da morte</b>
+                                    </dt>
+                                    <dd>
+                                        Draven arremessa dois machados gigantes para causar Dano Físico a cada unidade atingida. Reta da Morte lentamente muda de direção e
+                                        retorna a Draven após atingir um Campeão inimigo. Draven também pode ativar esta habilidade durante o percurso dos machados para fazer
+                                        com que voltem antecipadamente. Causa menos dano para cada unidade atingida e zera quando os machados mudam de direção. Executa inimigos
+                                        com Vida inferior ao número de acúmulos de Adoração do Draven.
+                                    </dd>
+                                </dl>
+                            </div>   
+                        </div>
+                    </td>
+                    <!--runas-->
+                    <td>
+                        <div id="runas" align="center" style="font-size: 20px;">
+                            Runas
+                            <img src="images/draven/runas.png" alt="Runas" width="500" height="281">
+                        </div>
+                        <div id="items" align="center" style="margin-top: 50px; font-size: 20px;">
+                            Items
+                            <img src="images/draven/items.png" alt="Items" width="500" height="281">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div align="center" id="historia">
+                <a href="https://universe.leagueoflegends.com/pt_BR/story/champion/draven/" style="color: black" target="_blank">Historia do Draven</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
