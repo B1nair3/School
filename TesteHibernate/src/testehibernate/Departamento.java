@@ -21,19 +21,19 @@ public class Departamento {
         this.nome = nomeDepto;
     }
 
-    public int getCodDepto() {
+    public int getCod() {
         return cod;
     }
 
-    public void setCodDepto(int codDepto) {
+    public void setCod(int codDepto) {
         this.cod = codDepto;
     }
 
-    public String getNomeDepto() {
+    public String getNome() {
         return nome;
     }
 
-    public void setNomeDepto(String nomeDepto) {
+    public void setNome(String nomeDepto) {
         this.nome = nomeDepto;
     }
 }

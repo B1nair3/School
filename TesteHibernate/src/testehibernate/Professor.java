@@ -1,9 +1,7 @@
 package testehibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -18,10 +16,22 @@ public class Professor {
     @Column
     private double salario;
 
+    @OneToMany
+    @JoinColumn(name = "profResponsavel")
+    private List<Disciplina> listaDisciplinas;
+
     public Professor(int codigo, String nome, double salario) {
         this.codigo = codigo;
         this.nome = nome;
         this.salario = salario;
+    }
+
+    public List<Disciplina> getListaDisciplinas() {
+        return listaDisciplinas;
+    }
+
+    public void setListaDisciplinas(List<Disciplina> listaDisciplinas) {
+        this.listaDisciplinas = listaDisciplinas;
     }
 
     public int getCodigo() {
