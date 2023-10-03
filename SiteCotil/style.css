@@ -1,0 +1,22 @@
+		.icones {
+			color: red;
+		}
+
+		.centralizaCont {
+			text-align: center;			
+		}
+
+		.cursosContainer {
+			background-color: lightgray;	
+			padding: 20px;	
+			border-radius: 5px;	
+		}
+
+		.alturaImgsCursos {
+			height: 215px;
+		}
+
+		.marginCards {
+			margin-bottom: 20px;
+		}
+
