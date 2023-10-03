@@ -6,14 +6,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
-
+@Table(name = "Funcionario")
 public class Funcionario {
 
     @Id
+    @Column(unique = true)
     private int id;
 
-    @Column
+    @Column(length = 100, nullable = false)
     private String nome;
 
     @Column
