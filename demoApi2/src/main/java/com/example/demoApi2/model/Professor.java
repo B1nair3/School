@@ -7,21 +7,24 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class Aluno {
-    //Lembrar de nunca gerar construtor pois o spring usa o default
+public class Professor {
+
     @Id
     @Column
-    private int ra;
+    private int rf;
 
     @Column
     private String nome;
 
-    public int getRa() {
-        return ra;
+    @Column
+    private double salario;
+
+    public int getRf() {
+        return rf;
     }
 
-    public void setRa(int ra) {
-        this.ra = ra;
+    public void setRf(int rf) {
+        this.rf = rf;
     }
 
     public String getNome() {
@@ -30,5 +33,13 @@ public class Aluno {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 }
