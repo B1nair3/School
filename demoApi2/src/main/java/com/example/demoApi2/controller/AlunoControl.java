@@ -3,10 +3,7 @@ package com.example.demoApi2.controller;
 import com.example.demoApi2.model.Aluno;
 import com.example.demoApi2.repository.AlunoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,8 +24,23 @@ public class AlunoControl {
         return alRepository.findAll();
     }
 
-    @GetMapping ("/buscar/{ra}")
+    @GetMapping ("/buscar/ra/{ra}")
     public Optional<Aluno> buscarPorRa(@PathVariable("ra") int ra) {
         return alRepository.findById(ra);
+    }
+
+    @GetMapping ("/buscar/nome/{nome}")
+    public List<Aluno> buscarPorNome (@PathVariable("nome") String nome) {
+        return alRepository.findByNome(nome);
+    }
+
+    @GetMapping ("/buscar/altura/{altura}")
+    public List<Aluno> buscarPorAltura (@PathVariable("altura") double altura) {
+        return alRepository.findByAltura(altura);
+    }
+
+    @PostMapping("/inserir")
+    public void inserirAluno(@RequestBody Aluno aluno) {
+        alRepository.save(aluno);
     }
 }

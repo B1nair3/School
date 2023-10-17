@@ -3,10 +3,7 @@ package com.example.demoApi2.controller;
 import com.example.demoApi2.model.Professor;
 import com.example.demoApi2.repository.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,8 +20,23 @@ public class ProfessorControl {
         return prRepository.findAll();
     }
 
-    @GetMapping("/buscar/{rf}")
+    @GetMapping("/buscar/rf/{rf}")
     public Optional<Professor> buscarPorRf(@PathVariable("rf") int rf) {
         return prRepository.findById(rf);
+    }
+
+    @GetMapping ("/buscar/nome/{nome}")
+    public List<Professor> buscarPorNome (@PathVariable("nome") String nome) {
+        return prRepository.findByNome(nome);
+    }
+
+    @GetMapping ("/buscar/salario/{salario}")
+    public List<Professor> buscarPorSalario (@PathVariable("salario") double salario) {
+        return prRepository.findBySalario(salario);
+    }
+
+    @PostMapping("/inserir")
+    public void inserirAluno(@RequestBody Professor professor) {
+        prRepository.save(professor);
     }
 }
