@@ -63,4 +63,23 @@ public class AlunoControl {
     public List<Aluno> buscarAlunoPorOnePiece(@PathVariable("piece") String piece) {
         return alRepository.findByOnePiece(piece);
     }
+
+    @GetMapping("/todos/maior/ra/{ra}")
+    public List<Aluno> buscarMaiorRa(@PathVariable("ra") int ra) {
+        return alRepository.findByMaiorRa(ra);
+    }
+
+    @GetMapping("/todos/menor/altura/{altura}")
+    public List<Aluno> buscarMenorAltura(@PathVariable("altura") double altura) {
+        return alRepository.findByMenorAltura(altura);
+    }
+
+    @GetMapping("/todos/nomeRa/{nome}/{ra}")
+    public List<Aluno> buscarNomeRa(@PathVariable("ra") int ra, @PathVariable("nome") String nome) {
+        return alRepository.findByNomeRa(nome, ra);
+    }
+    @GetMapping("/todos/nomeAltura/{nome}/{altura}")
+    public List<Aluno> buscarNomeAltura(@PathVariable("altura") double altura, @PathVariable("nome") String nome) {
+        return alRepository.findByNomeAltura(nome, altura);
+    }
 }

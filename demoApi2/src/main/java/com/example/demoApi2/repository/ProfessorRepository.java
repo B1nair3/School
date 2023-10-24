@@ -13,4 +13,8 @@ public interface ProfessorRepository extends JpaRepository <Professor, Integer> 
 
     @Query("select p from Professor p where p.nome like %?1%")
     List<Professor> findByOnePiece(String piece);
+    @Query("select p from Professor p where p.nome like %?1% and p.rf < ?2")
+    List<Professor>findByNomeRf(String nome, int rf);
+    @Query("select p from Professor p where p.nome like %?1% and p.salario > ?2")
+    List<Professor>findByNomeSalario(String nome, double salario);
 }

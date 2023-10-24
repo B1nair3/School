@@ -61,4 +61,12 @@ public class ProfessorControl {
     public List<Professor> buscarProfessorPorOnePiece(@PathVariable("piece") String piece) {
         return prRepository.findByOnePiece(piece);
     }
+    @GetMapping("/todos/nomeSalario/{nome}/{salario}")
+    public List<Professor> buscarNomeSalario(@PathVariable("nome") String nome, @PathVariable("salario") double salario) {
+        return prRepository.findByNomeSalario(nome, salario);
+    }
+    @GetMapping("/todos/nomeRf/{nome}/{rf}")
+    public List<Professor> buscarNomeCodigo(@PathVariable("nome") String nome, @PathVariable("rf") int rf) {
+        return prRepository.findByNomeRf(nome, rf);
+    }
 }

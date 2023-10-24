@@ -65,4 +65,17 @@ public class DisciplinaControl {
     public List<Disciplina> buscarDisciplinaPorOnePiece(@PathVariable("piece") String piece) {
         return diRepository.findByOnePiece(piece);
     }
+
+    @GetMapping("/todos/siglaCodigo/{sigla}/{codigo}")
+    public List<Disciplina> buscarSiglaCodigo(@PathVariable("sigla") String sigla, @PathVariable("codigo") int codigo) {
+        return diRepository.findBySiglaCodigo(sigla, codigo);
+    }
+    @GetMapping("/todos/nomeCodigo/{nome}/{codigo}")
+    public List<Disciplina> buscarNomeCodigo(@PathVariable("nome") String nome, @PathVariable("codigo") int codigo) {
+        return diRepository.findByNomeCodigo(nome, codigo);
+    }
+    @GetMapping("/todos/nomeSigla/{nome}/{sigla}")
+    public List<Disciplina> buscarNomeSigla(@PathVariable("nome") String nome, @PathVariable("sigla") String sigla) {
+        return diRepository.findByNomeSigla(nome, sigla);
+    }
 }
