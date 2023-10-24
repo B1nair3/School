@@ -43,4 +43,24 @@ public class AlunoControl {
     public void inserirAluno(@RequestBody Aluno aluno) {
         alRepository.save(aluno);
     }
+
+    @DeleteMapping("/deletar")
+    public void removerAluno(@RequestBody Aluno aluno) {
+        alRepository.delete(aluno);
+    }
+
+    @DeleteMapping("/deletar/ra/{ra}")
+    public void removerAlunoPorRa(@PathVariable("ra") int ra) {
+        alRepository.deleteById(ra);
+    }
+
+    @PutMapping("/atualizar")
+    public void atualizarAluno(@RequestBody Aluno aluno) {
+        alRepository.save(aluno);
+    }
+
+    @GetMapping("/todos/nome/piece/{piece}")
+    public List<Aluno> buscarAlunoPorOnePiece(@PathVariable("piece") String piece) {
+        return alRepository.findByOnePiece(piece);
+    }
 }

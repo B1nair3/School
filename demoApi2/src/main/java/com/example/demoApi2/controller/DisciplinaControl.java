@@ -1,5 +1,6 @@
 package com.example.demoApi2.controller;
 
+import com.example.demoApi2.model.Aluno;
 import com.example.demoApi2.model.Disciplina;
 import com.example.demoApi2.repository.DisciplinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,25 @@ public class DisciplinaControl {
     @PostMapping("/inserir")
     public void inserir(@RequestBody Disciplina disciplina) {
         diRepository.save(disciplina);
+    }
+
+    @DeleteMapping("/deletar")
+    public void removerDisciplina(@RequestBody Disciplina disciplina) {
+        diRepository.delete(disciplina);
+    }
+
+    @DeleteMapping("/deletar/codigo/{codigo}")
+    public void removerDisciplinaPorCodigo(@PathVariable("codigo") int codigo) {
+        diRepository.deleteById(codigo);
+    }
+
+    @PutMapping("/atualizar")
+    public void atualizarDisciplina(@RequestBody Disciplina disciplina) {
+        diRepository.save(disciplina);
+    }
+
+    @GetMapping("/todos/nome/piece/{piece}")
+    public List<Disciplina> buscarDisciplinaPorOnePiece(@PathVariable("piece") String piece) {
+        return diRepository.findByOnePiece(piece);
     }
 }
