@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Desconstrução Array</title>
+
+    <script>
+
+        let nomes = ['Simone', 'Dapolito', 18];
+        console.log(nomes);
+
+        //let segundoNome = nomes[1];
+
+        //atribui o valor de nomes[1] a var segundoNome
+        let { 1:segundoNome } = nomes;
+        console.log(segundoNome);
+
+        //atribui o valor de nomes[0] a var primeiroNome e de nomes[2] a var idade
+        //let primeiroNome = nomes[0];
+        //let idade = nomes[2];
+        let { 0:primeiroNome, 2:idade } = nomes;
+        console.log(primeiroNome);
+        console.log(idade);
+
+        let [nome, sobrenome, age] = nomes; //outra forma de desconstruir um array
+        console.log(nome);
+        console.log(sobrenome);
+        console.log(age);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

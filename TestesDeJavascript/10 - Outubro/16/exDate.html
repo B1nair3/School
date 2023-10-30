@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Datas</title>
+
+    <script type="text/javascript">
+        
+        var hoje = new Date();
+        console.log(hoje);
+        console.log(typeof hoje);
+
+        var dataPassada = new Date("01/22/1994 15:23:35");
+        console.log(dataPassada);
+        console.loge(typeof dataPassada);
+
+        var data1 = new Date("25 jul 2017 15:29:40");
+        console.log(data1);
+        console.log(typeof data1);
+
+        //meses - jan 0 e dez 11
+        //ano, mes, dia, hora, min, seg
+        var data2 = new Date(1994, 0, 22, 15, 23, 35);
+        console.log(data2);
+        console.log(typeof data2);
+
+        //formatando data
+        var hoje2 = new Date(); //data atual
+
+        var dia = hoje2.getDate();
+        var mes = hoje2.getMonth(); //mes começa em 0
+        var ano = hoje2.getFullYear();
+        var diaSemanaNum = hoje2.getDay(); //0=domingo e assim por diante
+        var hora = hoje2.getHours();
+        var min = hoje2.getMinutes();
+        var seg = hoje2.getSeconds();
+
+        //Segunda-feira, 30 de outubro de 2023
+
+        //obtendo o dia da semana em formato textual
+        var semana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+
+        var diaSemanaTexto = semana[diaSemanaNum];
+        console.log(diaSemanaTexto);
+
+        //obtendo o mês em formato textual
+        var mesesAno = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+        var mesTexto = mesesAno[mes];
+        console.log(mesTexto);
+
+        console.log(diaSemanaTexto + ", " + dia + " de " + mesTexto + " de " + ano);
+
+        console.log(`${diaSemanaTexto}, ${dia} de ${mesTexto} de ${ano} - ${hora}:${min}:${seg}`);
+
+        //comparando datas
+        var dataX = new Date("10/05/2022");
+        var dataY = new Date("11/05/2022");
+
+        //if (datax == dataY) { //não funciona pq para comparar se datas são iguais, dois objetos não são iguais}
+
+        if(dataX.getTime() == dataY.getTime()){
+            console.log("Datas iguais");
+        }else{
+            console.log("Datas diferentes");
+        }
+
+        //para comparar com <,> <= ou >= é normal
+        if(dataX > dataY){
+            console.log("A data inicial deve ser menor que a data final");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

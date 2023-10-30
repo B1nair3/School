@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exemplo Array 5</title>
+
+    <script>
+        //findIndex - localiza o índice de um item na lista
+
+        let frutas = ['Banana', 'Pêra', 'Uva', 'Maçã'];
+
+        const buscaUva = frutas.findIndex(
+            (fruta) => {
+                return fruta === 'Uva';
+            }
+        );
+        console.log("Posição Uva:" + buscaUva);
+
+        //find - localiza na lista o 1º item que passar no teste/verificação
+        let numeros = [6, 43, 22, 88, 10, 29, 90];
+
+        let buscaMaior45 = numeros.find(x => x > 45);
+        console.log(buscaMaior45);
+
+        //includes - verifica se o valor existe no array
+        let nomesTeste = ['Matheus', 'Lucas', 'João'];
+        console.log(nomesTeste.includes('Simone'));
+        //está retornando false
+
+        //some - retorna true se pelo menos um return da iteração for verdadeiro
+        console.log(nomesTeste.some(nome => nome === 'Lucas'));
+        //está retornando true
+
+        //every - verifica se todos os itens de um array ou de um obj atendem a uma condição/valor
+        numeros = [6, 43, 22, 1, 101, 29];
+        const maiorQue3 = numeros.every(x => x > 3);
+        console.log(maiorQue3);
+        //está retornando false
+
+        //filter - retorna um array com a lista de valores que durante a sua itearação retorna um valor verdadeiro
+        numeros = [6,43,22,88,101,29];
+
+        buscaMaior45 = numeros.filter(x => x > 45);
+        console.log(buscaMaior45);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

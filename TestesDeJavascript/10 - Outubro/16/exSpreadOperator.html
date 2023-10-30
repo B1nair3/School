@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Spread Operator (...)</title>
+
+    <script>
+        let v1 = [1, 2, 3];
+        console.log(v1);
+
+        let v2 = [4, 5, 6];
+        console.log(v2);
+
+        let vFinal = [...v1, ...v2];
+        console.log(vFinal);
+
+        var arr = ['a', 'b', 'c'];
+        var arr2 = ['d', 'e', 'f'];
+        arr = [...arr, ...arr2];
+
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

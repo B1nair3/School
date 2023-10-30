@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Exemplo Array 6</title>
+
+    <script>
+
+        const carros = ['Ford', 'Fiat', 'Honda'];
+
+        //com função anônima
+        carros.forEach(
+            function(item, index, array){
+                console.log(item.toUpperCase);
+            }
+        );
+
+        //com arrow function
+        carros.forEach(
+            (item, index, array) => {
+                console.log(item.toUpperCase);
+            }
+        );
+
+        //modificando o array original
+        console.log(carros);
+        
+        carros.forEach(
+            (item, index, array) => {
+                array[index] = 'Carro '+ item;
+            }
+        );
+        console.log(carros);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

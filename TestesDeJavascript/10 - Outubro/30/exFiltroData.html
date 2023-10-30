@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Filtro de Data</title>
+
+    <script type="text/javascript">
+
+        function pesquisar() {
+
+            var dataInicial = document.getElementById("dataInicial").value;
+            var dataFinal = document.getElementById("dataFinal").value;
+
+            if (dataInicial > dataFinal) {
+                //alert("A data inicial deve ser anterior a data final!")
+                //document.getElementById("msg").textContent = "A data inicial deve ser anterior a data final!";
+                //document.getElementById("msg").style.color = "red";
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro!',
+                    text: 'A data inicial deve ser anterior a data final',
+                })
+            } else {
+                document.getElementById("msg").textContent = "Processando ...";
+                document.getElementById("msg").style.color = "green";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Relatório de Vendas por Período</h1>
+    <hr>
+
+    <form>
+        Data inicial:<br>
+        <input type="date" id="dataInicial">
+
+        <br><br>
+
+        Data final:<br>
+        <input type="date" id="dataFinal">
+
+        <br><br>
+
+        <input type="button" value="Buscar" onclick="pesquisar();">
+
+        <br><br>
+
+        <span id="msg"></span>
+    </form>
+    <hr>
+</body>
+
+</html>
