@@ -2,7 +2,6 @@
 
 int vled = 2, aled = 3;
 String palavra = "";
-int ascii;
 
 void setup()
 {
@@ -17,6 +16,8 @@ void loop()
 {
   if(Serial.available() > 0){
     palavra = Serial.readString();
+    Serial.print(palavra);
+    Serial.print("\n");
     palavra.toUpperCase();
     for(int i = 0; i < palavra.length(); i++)
       busca(palavra[i]);
@@ -25,7 +26,6 @@ void loop()
 }
 
 void busca(char letra){
-  Serial.print(letra);
   if(letra == 'A')
     a();
   else if (letra == 'B')
