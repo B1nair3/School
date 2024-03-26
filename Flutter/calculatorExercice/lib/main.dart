@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
-import 'calculator.dart';
+import 'package:flutter_application_10000/calculator.dart';
 
 void main() {
   runApp(const MyApp());
