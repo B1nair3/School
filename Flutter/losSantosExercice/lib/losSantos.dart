@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_local_variable, avoid_print, prefer_interpolation_to_compose_strings, curly_braces_in_flow_control_structures
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2asdas/car.dart';
 
@@ -10,19 +10,57 @@ class MyCar extends StatefulWidget {
 }
 
 class _MyCarState extends State<MyCar> {
-  TextEditingController carController = TextEditingController(), guyController = TextEditingController();
+  TextEditingController carController = TextEditingController(), ownerController = TextEditingController();
   String isTunned = "";
   bool motorPower = false, useCarbonPlates = false, renewTire = false, isPriorized = false;
   List<Car> carList = [];
+  List<String> changesList = [];
 
-  void turnAllOff() {
+  void cleanForm() {
     motorPower = false;
     useCarbonPlates = false;
     renewTire = false;
     isPriorized = false;
     isTunned = "";
     carController = TextEditingController();
-    guyController = TextEditingController();
+    ownerController = TextEditingController();
+    changesList = [];
+  }
+
+  void createCarInstance() {
+    if (renewTire) {
+      changesList.add("Renew Tire");
+    }
+    else {
+      changesList.add("No tire renew");
+    }
+    if (motorPower) {
+      changesList.add("Upgrade Motor Power to 2.0");
+    }
+    else {
+      changesList.add("No motor upgrade");
+    }
+    if (useCarbonPlates) {
+      changesList.add("Use Carbon Plates");
+    }
+    else {
+      changesList.add("No carbon plates");
+    }
+    carList.add(Car(ownerController.text, carController.text, isTunned, changesList, isPriorized));
+    showList();
+    cleanForm();
+  }
+
+  void showList() {
+    print("\nLISTAGEM DE PEDIDOS");
+    for (Car c in carList) {
+      if (c.isPriorized)
+        print("============================================\nOwner: " + c.owner + "\nCar model: " + c.model + "\nWas tunned: " + c.isTunned + "\nChanges:\n" + changesList[0] + "\n" +
+          changesList[1] + "\n" + changesList[2] + "\nPriorized: Yes\n============================================\n");
+      else
+        print("============================================\nOwner: " + c.owner + "\nCar model: " + c.model + "\nWas tunned: " + c.isTunned + "\nChanges:\n" + changesList[0] + "\n" +
+          changesList[1] + "\n" + changesList[2] + "\nPriorized: No\n============================================\n");
+    }
   }
 
   @override
@@ -38,7 +76,7 @@ class _MyCarState extends State<MyCar> {
               children: [
                 SizedBox(height: 250, child: Image.asset("images/losSantos.png")),
                 TextField(
-                  controller: guyController,
+                  controller: ownerController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
                     labelText: "Owner name",
@@ -132,7 +170,8 @@ class _MyCarState extends State<MyCar> {
                       width: 180,
                       child: FloatingActionButton(
                         onPressed: () => {
-                          
+                          if((ownerController.text != "") && (carController.text != "") && (isTunned != ""))
+                            createCarInstance(),
                           setState((){}),
                         },
                         backgroundColor: Colors.deepPurple,
@@ -144,7 +183,7 @@ class _MyCarState extends State<MyCar> {
                       width: 180,
                       child: FloatingActionButton(
                         onPressed: () => {
-                          turnAllOff(),
+                          cleanForm(),
                           setState((){}),
                         },
                         backgroundColor: Colors.deepPurple,
