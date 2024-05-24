@@ -1,4 +1,4 @@
-# flutter_application_steam
+# steam
 
 A new Flutter project.
 
