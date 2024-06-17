@@ -37,10 +37,11 @@ form {
     color: white;
 }
 form button {
-    width: 100%;
+    width: 380px;
 }
 .homeBtn {
     width: 440px;
+    margin-bottom: 15px;
 }
 .homeBtn > button{
     width: 100%;
