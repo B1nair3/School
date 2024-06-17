@@ -11,10 +11,8 @@
 </head>
 
 <body>
-
-    <h1>Formulário de Inscrição</h1>
     <form method="post" enctype="multipart/form-data"> <!-- Adicione enctype para suportar upload de arquivos -->
-
+        <h1>Formulário de Inscrição</h1>
         {% csrf_token %}
         <label for="number">Número de Identificação:</label>
         <input type="number" id="number" name="number" required><br><br>
@@ -26,7 +24,7 @@
         <button type="submit">Enviar</button>
     </form>
     <br><br>
-    <a href="{% url 'index' %}"><button>Home</button></a>
+    <a href="{% url 'index' %}" class='homeBtn'><button>Home</button></a>
 </body>
 
 </html>
