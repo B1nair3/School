@@ -1,7 +1,5 @@
-/* myapp/static/styles.css */
 body {
     font-family: Arial, sans-serif;
-    /* Define a fonte do corpo */
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,39 +7,44 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
-    /* Define a cor de fundo */
+    background-image: linear-gradient(to top, #984FFF, #81FFF8);
 }
 
 h1 {
-    color: #333;
-    /* Define a cor do cabeçalho */
+    color: white;
+    max-width: 540px;
+    text-align: center;
 }
 
 button {
-    background-color: #4CAF50;
-    /* Define a cor de fundo do botão */
+    background-color: #984FFF;
     color: white;
     padding: 10px 20px;
     border: none;
-
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 25px;
+    transition: .3s;
 }
 
 button:hover {
-    background-color: #45a049;
-    /* Define a cor do botão ao passar o
-    mouse */
+    background-color: #81FFF8;
 }
 
 form {
-    background-color: white;
+    background-color: rgba(0, 0, 0, .3);
     padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Adiciona uma sombra
-    ao formulário */
+    border-radius: 25px;
+    color: white;
+}
+form button {
+    width: 380px;
+}
+.homeBtn {
+    width: 440px;
+    margin-bottom: 15px;
+}
+.homeBtn > button{
+    width: 100%;
 }
 
 label {
@@ -50,27 +53,24 @@ label {
 }
 
 input {
-
     width: 100%;
     padding: 8px;
     margin-top: 5px;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+    width: 60%;
     margin-top: 20px;
+    background-color: rgba(0, 0, 0, .3);
+    color: white;
 }
 
-th,
-td {
+th, td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 th {
-    background-color: #f2f2f2;
-    /* Define a cor de fundo do cabeçalho
-    da tabela */
+    background-color: none;
 }
